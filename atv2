@@ -1,0 +1,205 @@
+atv2
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int coluna, linha , cont;
+
+    printf("Digite o tamanho de linhas da matriz:\n");
+    scanf("%d", &linha);
+
+    printf("Digite o tamanho de coluna da matriz:\n");
+    scanf("%d", &coluna);
+
+    // Matriz
+    int **matriz = (int **)malloc(linha * sizeof(int *));
+    for (int i = 0; i < linha; i++)
+    {
+        matriz[i] = (int *)malloc(coluna * sizeof(int));
+    }
+
+    // Preenchimento da matriz
+    for (int i = 0; i < linha; i++)
+    {
+        for (int j = 0; j < coluna; j++)
+        {#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int coluna, linha , cont;
+
+    printf("Digite o tamanho de linhas da matriz:\n");
+    scanf("%d", &linha);
+
+    printf("Digite o tamanho de coluna da matriz:\n");
+    scanf("%d", &coluna);
+
+    // Matriz
+    int **matriz = (int **)malloc(linha * sizeof(int *));
+    for (int i = 0; i < linha; i++)
+    {
+        matriz[i] = (int *)malloc(coluna * sizeof(int));
+    }
+
+    // Preenchimento da matriz
+    for (int i = 0; i < linha; i++)
+    {
+        for (int j = 0; j < coluna; j++)
+        {
+            printf("Digite um valor para a posição [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    char operacao = ' ';
+    while (operacao != 's' && operacao != 'S')
+    {
+        printf("\n---------------------------\n");
+        printf("/////MENU DE OPERACOES/////\n");
+        printf("---------------------------\n");
+        printf("Digite + para fazer matriz transposta\n");
+        printf("Digite = para fazer matriz simetrica\n");
+        printf("Digite S para sair\n");
+        printf("---------------------------\n");
+        printf("Informe a operacao que deseja realizar: ");
+        scanf(" %c", &operacao);
+
+        switch (operacao)
+        {
+        case '+':
+            printf("Matriz Transposta:\n");
+            for (int i = 0; i < coluna; i++)
+            {
+                for (int j = 0; j < linha; j++)
+                {
+                    printf("%d ", matriz[j][i]);
+                }
+                printf("\n");
+            }
+        case '=':
+            printf("Matriz Simetrica:\n");
+            for (int i = 0; i < coluna; i++)
+            {
+                for (int j = 0; j < linha; j++)
+                {
+                    if (matriz[j][i] != matriz[i][j])
+                    {
+                        cont++;
+                        break;
+                    }
+                }
+                    if (cont > 1)
+                    {
+                        printf("Funcao não é simetrica");
+                        break;
+
+                    }
+                    else
+                    {
+                        printf("Funcao é simetrica");
+                    }
+                printf("\n");
+            }
+            break;
+        case 's':
+        case 'S':
+            printf("Saindo...\n");
+            break;
+        default:
+            printf("Nenhuma operacao valida foi informada\n");
+            break;
+        }
+
+        printf("\nPressione qualquer tecla para continuar...");
+        getchar();
+        getchar();
+    }
+
+    for (int i = 0; i < linha; i++)
+    {
+        free(matriz[i]);
+    }
+    free(matriz);
+
+    return 0;
+}
+
+            printf("Digite um valor para a posição [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    char operacao = ' ';
+    while (operacao != 's' && operacao != 'S')
+    {
+        printf("\n---------------------------\n");
+        printf("/////MENU DE OPERACOES/////\n");
+        printf("---------------------------\n");
+        printf("Digite + para fazer matriz transposta\n");
+        printf("Digite = para fazer matriz simetrica\n");
+        printf("Digite S para sair\n");
+        printf("---------------------------\n");
+        printf("Informe a operacao que deseja realizar: ");
+        scanf(" %c", &operacao);
+
+        switch (operacao)
+        {
+        case '+':
+            printf("Matriz Transposta:\n");
+            for (int i = 0; i < coluna; i++)
+            {
+                for (int j = 0; j < linha; j++)
+                {
+                    printf("%d ", matriz[j][i]);
+                }
+                printf("\n");
+            }
+        case '=':
+            printf("Matriz Simetrica:\n");
+            for (int i = 0; i < coluna; i++)
+            {
+                for (int j = 0; j < linha; j++)
+                {
+                    if (matriz[j][i] != matriz[i][j])
+                    {
+                        cont++;
+                        break;
+                    }
+                }
+                    if (cont > 1)
+                    {
+                        printf("Funcao não é simetrica");
+                        break;
+
+                    }
+                    else
+                    {
+                        printf("Funcao é simetrica");
+                    }
+                printf("\n");
+            }
+            break;
+        case 's':
+        case 'S':
+            printf("Saindo...\n");
+            break;
+        default:
+            printf("Nenhuma operacao valida foi informada\n");
+            break;
+        }
+
+        printf("\nPressione qualquer tecla para continuar...");
+        getchar();
+        getchar();
+    }
+
+    for (int i = 0; i < linha; i++)
+    {
+        free(matriz[i]);
+    }
+    free(matriz);
+
+    return 0;
+}
